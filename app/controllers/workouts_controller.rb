@@ -1,7 +1,7 @@
 class WorkoutsController < ApplicationController
 
     def index
-        @workouts = Workout.all
+        @workouts = Workout.order_by_time
     end
 
     def new

@@ -1,6 +1,17 @@
 <h1>All Workouts!</h1>
 <ul>
-<% @workouts.each do |work| %> 
-    <li><%= work.name %> - <%= work.level %>: <%= work.time %> Minutes</li> 
+<h3>Beginner:</h3>
+<% @workouts.beginner.each do |work| %> 
+    <p><%= link_to work.name, workout_path(work) %> - <%= work.level %>: <%= work.time %> Minutes</p>
+    <% end %> 
+
+<h3>Intermediate:</h3>
+<% @workouts.intermediate.each do |work| %> 
+    <p><%= link_to work.name, workout_path(work) %> - <%= work.level %>: <%= work.time %> Minutes</p>
+    <% end %> 
+
+<h3>Advanced:</h3>
+<% @workouts.advanced.each do |work| %> 
+    <p><%= link_to work.name, workout_path(work) %> - <%= work.level %>: <%= work.time %> Minutes</p>
     <% end %> 
 </ul>
