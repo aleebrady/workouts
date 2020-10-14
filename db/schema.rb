@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_13_180210) do
+ActiveRecord::Schema.define(version: 2020_10_14_172011) do
+
+  create_table "trainers", force: :cascade do |t|
+    t.string "name"
+    t.string "skills"
+    t.integer "rating"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "username"
@@ -24,11 +32,13 @@ ActiveRecord::Schema.define(version: 2020_10_13_180210) do
 
   create_table "workouts", force: :cascade do |t|
     t.string "name"
-    t.string "type"
+    t.string "workout_type"
     t.integer "time"
     t.string "level"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "trainer_id"
+    t.integer "user_id"
   end
 
 end

@@ -1,1 +1,6 @@
 <h1>All Workouts!</h1>
+<ul>
+<% @workouts.each do |work| %> 
+    <li><%= work.name %> - <%= work.level %>: <%= work.time %> Minutes</li> 
+    <% end %> 
+</ul>
