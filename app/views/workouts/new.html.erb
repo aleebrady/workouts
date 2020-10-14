@@ -8,7 +8,7 @@
     <%= f.text_field :workout_type %> 
 
     <strong><%= f.label :time %>:</strong>
-    <%= f.number_field :time %> 
+    <%= f.number_field :time, min:0 %> 
 
     <strong><%= f.label :level %>:</strong>
     <%= f.select(:level, ["Beginner", "Intermediate", "Advanced"]) %> 
