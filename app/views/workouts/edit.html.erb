@@ -1,4 +1,4 @@
-<h1>Add New Workout</h1>
+<h1>Edit Workout</h1>
 
 <%= form_for (@workout) do |f| %> 
     <strong><%= f.label :name %>:</strong>
@@ -14,6 +14,5 @@
     <%= f.select(:level, ["Beginner", "Intermediate", "Advanced"]) %> 
 <br>
 <br>
-    <%= f.submit "Add New" %> 
+    <%= f.submit "Update Info" %> 
     <% end %> 
-
