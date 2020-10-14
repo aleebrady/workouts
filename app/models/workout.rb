@@ -9,6 +9,7 @@ class Workout < ApplicationRecord
     scope :beginner, -> {where(level: "Beginner")}
     scope :intermediate, -> {where(level: "Intermediate")}
     scope :advanced, -> {where(level: "Advanced")}
+    scope :search_by_time, -> (workout_type) {where("workout_type = ?", workout_type)}
 
     # def self.order_by_time
     #     order(time: :asc)

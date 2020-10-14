@@ -1,16 +1,23 @@
 <h1>All Workouts!</h1>
+
+<%= form_tag("/workouts", method: "get") do %>
+    <%= label_tag(:workout_type, "Workout Style:") %>
+    <%= text_field_tag(:workout_type) %>
+    <%= submit_tag("Search") %>
+  <% end %>
+
 <ul>
-<h3>Beginner:</h3>
+<h3><li>Beginner:</li></h3>
 <% @workouts.beginner.each do |work| %> 
     <p><%= link_to work.name, workout_path(work) %> - <%= work.level %>: <%= work.time %> Minutes</p>
     <% end %> 
 
-<h3>Intermediate:</h3>
+<h3><li>Intermediate:</li></h3>
 <% @workouts.intermediate.each do |work| %> 
     <p><%= link_to work.name, workout_path(work) %> - <%= work.level %>: <%= work.time %> Minutes</p>
     <% end %> 
 
-<h3>Advanced:</h3>
+<h3><li>Advanced:</li></h3>
 <% @workouts.advanced.each do |work| %> 
     <p><%= link_to work.name, workout_path(work) %> - <%= work.level %>: <%= work.time %> Minutes</p>
     <% end %> 

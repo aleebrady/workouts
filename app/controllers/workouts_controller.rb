@@ -1,7 +1,12 @@
 class WorkoutsController < ApplicationController
 
     def index
+        if params[:workout_type]
+            @workouts = Workout.search_by_time(params[:workout_type]).order_by_time
+            @workouts = Workout.order_by_time if @workouts == []
+        else
         @workouts = Workout.order_by_time
+        end
     end
 
     def new
