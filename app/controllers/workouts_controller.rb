@@ -1,16 +1,27 @@
 class WorkoutsController < ApplicationController
 
     def index
-        if params[:workout_type]
-            @workouts = Workout.search_by_time(params[:workout_type]).order_by_time
-            @workouts = Workout.order_by_time if @workouts == []
+        if params[:trainer_id] && trainer = Trainer.find_by_id(params[:trainer_id])
+            #nested 
+            @workouts = trainer.workouts
         else
-        @workouts = Workout.order_by_time
+            if params[:workout_type]
+                @workouts = Workout.search_by_time(params[:workout_type]).order_by_time
+                @workouts = Workout.order_by_time if @workouts == []
+            else
+            @workouts = Workout.order_by_time
+            end
         end
     end
 
     def new
-        @workout = Workout.new
+        #nested route
+        if params[:trainer_id] && trainer = Trainer.find_by_id(params[:trainer_id])
+            @workout = trainer.workouts.build
+        else
+            #unnested
+            @workout = Workout.new
+        end
     end
 
     def create
