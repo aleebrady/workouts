@@ -7,6 +7,9 @@ Rails.application.routes.draw do
   post '/login' => 'sessions#create'
   delete '/logout' => 'sessions#destroy'
 
+#omniauth
+  get '/auth/facebook/callback' => 'sessions#fbcreate'
+
   resources :workouts
   resources :trainers do 
     resources :workouts, only: [:index, :new]
