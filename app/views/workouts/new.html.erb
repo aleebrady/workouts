@@ -12,6 +12,14 @@
 
     <strong><%= f.label :level %>:</strong>
     <%= f.select(:level, ["Beginner", "Intermediate", "Advanced"]) %> 
+
+    <br>
+    <br>
+
+    <strong><%= f.label :trainer_id, "Select a trainer" %>:</strong> 
+    <%= f.collection_select :trainer_id, Trainer.all, :id, :name, prompt: true %> 
+
+
 <br>
 <br>
     <%= f.submit "Add New" %> 

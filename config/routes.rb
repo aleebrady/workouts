@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-  resources :trainers
-  resources :workouts
+  
   #get 'workouts/:id' => 'workouts#show'
   
   root 'sessions#home'
@@ -8,6 +7,9 @@ Rails.application.routes.draw do
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
   delete '/logout' => 'sessions#destroy'
+
+  resources :trainers
+  resources :workouts
 
   resources :users
 
