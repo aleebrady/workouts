@@ -2,7 +2,8 @@ class Workout < ApplicationRecord
     belongs_to :user
     belongs_to :trainer
 
-    validates :name, :workout_type, :time, :level, presence: true 
+    validates :name, :workout_type, :time, :level, presence: true
+    validates :name, length: {minimum: 5, too_long: "%{count} is the least allowed"}
 
     scope :order_by_time, -> {order(:time)}
     #scope :shorter_workouts, -> {where("time < ?", 35)}

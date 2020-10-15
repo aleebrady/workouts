@@ -1,5 +1,8 @@
 <h1>Login</h1>
 
+<strong><%= flash[:error] %></strong>
+<br>
+<br>
 <%= form_for (@user), url: '/login' do |f| %> 
     <%= f.label :username %>:
     <%= f.text_field :username %> 
