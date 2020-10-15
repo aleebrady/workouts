@@ -1,22 +1,30 @@
 <h1>Create Account</h1>
 
+<ul>
+<% @user.errors.full_messages.each do |error_message| %>
+    <li><%= error_message %></li>
+
+    <% end %> 
+</ul>
+
 <%= form_for (@user) do |f| %>
-    <%= f.label :username %>: 
-    <%= f.text_field :username %>
+
+    <%= f.label :username %>:<br>
+    <%= f.text_field :username, required: true %><br>
     <br>
-    <%= f.label :email %>: 
-    <%= f.email_field :email %> 
+    <%= f.label :email %>:<br>
+    <%= f.email_field :email %><br>
     <br>
-    <%= f.label :age %>: 
-    <%= f.text_field :age %>
+    <%= f.label :age %>:<br>
+    <%= f.text_field :age %><br>
     <br>
-    <%= f.label :goal %>: 
-    <%= f.text_field :goal %> 
+    <%= f.label :goal %>:<br>
+    <%= f.text_field :goal %><br>
     <br>
-    <%= f.label :password %>: 
-    <%= f.password_field :password %> 
+    <%= f.label :password %>:<br>
+    <%= f.password_field :password %><br>
     <br>
-    <%= f.label :password_confirmation %>: 
+    <%= f.label :password_confirmation %>:<br>
     <%= f.password_field :password_confirmation %> 
 <br>
 <br>

@@ -5,12 +5,7 @@ class User < ApplicationRecord
     
     validates :username, :email, presence: true
     validates :username, :email, uniqueness: true
-
-
-    def new
-    end
-
-    def create
-    end
+    validates :password, confirmation: true
+    validates :password_confirmation, presence: true
 
 end
