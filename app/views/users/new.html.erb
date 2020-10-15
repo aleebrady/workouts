@@ -1,11 +1,6 @@
 <h1>Create Account</h1>
 
-<ul>
-<% @user.errors.full_messages.each do |error_message| %>
-    <li><%= error_message %></li>
-
-    <% end %> 
-</ul>
+<%= render partial: 'layouts/errors', locals: {object: @user}  %> 
 
 <%= form_for (@user) do |f| %>
 
