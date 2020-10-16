@@ -1,29 +1,4 @@
 <h1>Add New Workout</h1>
 
-<%= render partial: 'layouts/errors', locals: {object: @workout}  %> 
-
-<%= form_for (@workout) do |f| %> 
-    <strong><%= f.label :name %>:</strong>
-    <%= f.text_field :name %> 
-
-    <strong><%= f.label :workout_type %>:</strong>
-    <%= f.text_field :workout_type %> 
-
-    <strong><%= f.label :time %>:</strong>
-    <%= f.number_field :time, min:0 %> 
-
-    <strong><%= f.label :level %>:</strong>
-    <%= f.select(:level, ["Beginner", "Intermediate", "Advanced"]) %> 
-
-    <br>
-    <br>
-
-    <strong><%= f.label :trainer_id, "Select a trainer" %>:</strong> 
-    <%= f.collection_select :trainer_id, Trainer.all, :id, :name, prompt: true %> 
-
-
-<br>
-<br>
-    <%= f.submit "Add New" %> 
-    <% end %> 
+<%= render 'form' %>
 

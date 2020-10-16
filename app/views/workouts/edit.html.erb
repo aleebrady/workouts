@@ -1,20 +1,3 @@
 <h1>Edit Workout</h1>
 
-<%= render partial: 'layouts/errors', locals: {object: @workout}  %> 
-
-<%= form_for (@workout) do |f| %> 
-    <strong><%= f.label :name %>:</strong>
-    <%= f.text_field :name %> 
-
-    <strong><%= f.label :workout_type %>:</strong>
-    <%= f.text_field :workout_type %> 
-
-    <strong><%= f.label :time %>:</strong>
-    <%= f.number_field :time %> 
-
-    <strong><%= f.label :level %>:</strong>
-    <%= f.select(:level, ["Beginner", "Intermediate", "Advanced"]) %> 
-<br>
-<br>
-    <%= f.submit "Update Info" %> 
-    <% end %> 
+<%= render 'form' %>
