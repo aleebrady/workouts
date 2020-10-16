@@ -1,0 +1,7 @@
+<h1>All Reviews for <%= @trainer.name %></h1>
+
+<ul>
+<% @reviews.each do |review| %> 
+    <li><%= review.rating %> - <%= review.reviwer.username %> says: <%= review.content %></li>
+    <% end %> 
+</ul>

@@ -13,7 +13,7 @@ Rails.application.routes.draw do
 
   resources :workouts
   resources :trainers do 
-    resources :workouts, only: [:index, :new]
+    resources :workouts, only: [:index, :new, :create]
     resources :reviews, only: [:index, :new, :create]
   end
   
