@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_15_224537) do
+ActiveRecord::Schema.define(version: 2020_10_16_154527) do
+
+  create_table "reviews", force: :cascade do |t|
+    t.string "content"
+    t.integer "rating"
+    t.integer "trainer_id"
+    t.integer "reviwer_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "trainers", force: :cascade do |t|
     t.string "name"

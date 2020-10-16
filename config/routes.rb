@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  resources :reviews
   #get 'workouts/:id' => 'workouts#show'
   root 'sessions#home'
   get '/signup' => 'users#new'
@@ -13,6 +14,7 @@ Rails.application.routes.draw do
   resources :workouts
   resources :trainers do 
     resources :workouts, only: [:index, :new]
+    resources :reviews, only: [:index, :new, :create]
   end
   
   resources :users
