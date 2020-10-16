@@ -25,6 +25,7 @@ class SessionsController < ApplicationController
             u.username = auth['info']['name']
             u.email = auth['info']['email']
             u.password = auth['uid']
+            u.password_confirmation = auth['uid']
         end
         session[:user_id] = @user.id
    
