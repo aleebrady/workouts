@@ -21,6 +21,7 @@ class WorkoutsController < ApplicationController
         else
             #unnested
             @workout = Workout.new
+            @workout.build_trainer
         end
     end
 
@@ -67,7 +68,7 @@ class WorkoutsController < ApplicationController
     end
 
     def workout_params
-        params.require(:workout).permit(:name, :workout_type, :time, :level, :trainer_id)
+        params.require(:workout).permit(:name, :workout_type, :time, :level, :trainer_id, trainer_attributes: [:name, :skills])
     end
 
 

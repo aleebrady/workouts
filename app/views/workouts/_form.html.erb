@@ -18,7 +18,19 @@
 
     <strong><%= f.label :trainer_id, "Select a trainer" %>:</strong> 
     <%= f.collection_select :trainer_id, Trainer.all, :id, :name, prompt: true %> 
+<br>
+<br>
 
+<h4> Add Trainer </h4>
+
+<%= f.fields_for :trainer do |t| %>
+    <%= t.label :name %>
+    <%= t.text_field :name %> 
+
+    <%= t.label :skills %>
+    <%= t.text_field :skills %> 
+
+    <% end %>
 
 <br>
 <br>
