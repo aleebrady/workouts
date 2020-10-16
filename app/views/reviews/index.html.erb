@@ -2,6 +2,6 @@
 
 <ul>
 <% @reviews.each do |review| %> 
-    <li><%= review.rating %> - <%= review.reviwer.username %> says: <%= review.content %></li>
+    <li><%= review.rating %> - <%= review.reviewer.username %> says: <%= review.content %></li>
     <% end %> 
 </ul>

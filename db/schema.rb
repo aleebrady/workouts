@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 2020_10_16_154527) do
     t.string "content"
     t.integer "rating"
     t.integer "trainer_id"
-    t.integer "reviwer_id"
+    t.integer "reviewer_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

@@ -4,7 +4,7 @@ class CreateReviews < ActiveRecord::Migration[6.0]
       t.string :content
       t.integer :rating
       t.integer :trainer_id
-      t.integer :reviwer_id
+      t.integer :reviewer_id
 
       t.timestamps
     end

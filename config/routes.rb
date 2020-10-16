@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   
-  resources :reviews
+  #resources :reviews
   #get 'workouts/:id' => 'workouts#show'
   root 'sessions#home'
   get '/signup' => 'users#new'

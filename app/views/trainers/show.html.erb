@@ -1,4 +1,8 @@
 <h1><%= @trainer.name %></h1>
+<h4>Average Rating: <%= @trainer.reviews.average_rating %></h4>
 
 <h3>Skill Set: <%= @trainer.skills %> 
+
+<p><%= link_to "Reviews", trainer_reviews_path(@trainer.id) %> </p>
+<p><%= link_to "Write a Review", new_trainer_review_path(@trainer.id) %> </p>
 
