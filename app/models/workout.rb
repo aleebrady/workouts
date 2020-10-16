@@ -3,7 +3,7 @@ class Workout < ApplicationRecord
     belongs_to :trainer
 
     validates :name, :workout_type, :time, :level, presence: true
-    validates :name, length: {minimum: 4, too_long: "%{count} is the least allowed"}
+    validates :name, length: {minimum: 3, too_long: "%{count} is the least allowed"}
 
     #accepts_nested_attributes_for :trainer
 

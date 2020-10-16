@@ -2,6 +2,8 @@
 
 <p>The <%= @workout.name %> is a <%= @workout.workout_type %> workout at an <%= @workout.level %> level, lasting about <%= @workout.time %> minutes.</p>
 
+<p><%= @workout.trainer.name %> - <%= @workout.trainer.skills %></p>
+
 <%= link_to "Edit Workout", edit_workout_path(@workout) %> <br>
 <br>
 <%= link_to "Delete Workout", workout_path(@workout), method: :delete, data: { confirm: "Are you sure?" } %> 

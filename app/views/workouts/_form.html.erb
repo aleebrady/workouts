@@ -21,6 +21,7 @@
 <br>
 <br>
 
+<% if !params[:trainer_id] %>
 <h4> Add Trainer </h4>
 
 <%= f.fields_for :trainer do |t| %>
@@ -30,6 +31,7 @@
     <%= t.label :skills %>
     <%= t.text_field :skills %> 
 
+    <% end %>
     <% end %>
 
 <br>
