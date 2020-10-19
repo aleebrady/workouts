@@ -10,12 +10,15 @@
   </head>
 
   <body>
+  
   <% if logged_in? %>
     <%= link_to 'Log Out', logout_path, method: :delete %> 
     <br>
     <%= link_to 'All Workouts', workouts_path %> 
     <br>
     <%= link_to 'Add Workout', new_workout_path %>
+   <br>
+   <%= link_to "My Workouts", current_user%>
     <% end %> 
     
     <%= yield %>
