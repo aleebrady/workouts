@@ -1,4 +1,5 @@
 class ReviewsController < ApplicationController
+    before_action :checked_for_logged_in, only: [:new, :create, :edit, :update]
 
     def index 
         @trainer = Trainer.find_by_id(params[:trainer_id])

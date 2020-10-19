@@ -1,4 +1,5 @@
 class WorkoutsController < ApplicationController
+    before_action :checked_for_logged_in, except: [:index]
 
     def index
         if params[:trainer_id] && trainer = Trainer.find_by_id(params[:trainer_id])
