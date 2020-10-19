@@ -1,2 +1,11 @@
-<h1> User Path!</h1>
+<h1>Hello, <%= @user.username %>!</h1>
+
+<h2></p>Your Goal: <%= @user.goal %></p></h2>
+
+<h2>Workouts Completed:</h2>
+<ul>
+<% @user.workouts.each do |work| %>
+    <li><%= link_to work.name, workout_path(work) %> - <%= work.updated_at.strftime("%B %d, %Y at %H:%M") %></li>
+    <% end %> 
+</ul>
 
