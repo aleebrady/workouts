@@ -4,5 +4,9 @@
 <h3>Skill Set: <%= @trainer.skills %> 
 
 <p><%= link_to "Reviews", trainer_reviews_path(@trainer.id) %> </p>
-<p><%= link_to "Write a Review", new_trainer_review_path(@trainer.id) %> </p>
 
+<p><%= link_to "Write a Review", new_trainer_review_path(@trainer.id) %></p>
+
+<p><%= link_to "Trainer Workouts", trainer_workouts_path(@trainer.id) %></p>
+
+<p><%= link_to "New Trainer Workout", new_trainer_workout_path(@trainer.id) %></p>

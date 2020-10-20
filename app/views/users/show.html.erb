@@ -5,7 +5,7 @@
 <h2>Workouts Completed:</h2>
 <ul>
 <% @user.workouts.each do |work| %>
-    <li><%= link_to work.name, workout_path(work) %> - <%= work.updated_at.strftime("%B %d, %Y at %H:%M") %></li>
+    <li><%= link_to work.name, workout_path(work) %> - <%= work.updated_at.strftime("%B %d, %Y at %H:%M") %></li><br>
     <% end %> 
 </ul>
 
