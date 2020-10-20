@@ -2,7 +2,7 @@
 
 <p>The <%= @workout.name %> is a <%= @workout.workout_type %> workout at an <%= @workout.level %> level, lasting about <%= @workout.time %> minutes.</p>
 
-<p><%= @workout.trainer.name %> - <%= @workout.trainer.skills %></p>
+<p><%= link_to @workout.trainer.name, trainer_path(@workout.trainer) %> - <%= @workout.trainer.skills %></p>
 
 <%= link_to "Edit Workout", edit_workout_path(@workout) %> <br>
 <br>
