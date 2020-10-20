@@ -7,6 +7,7 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
   </head>
 
   <body>
@@ -20,7 +21,10 @@
    <br>
    <%= link_to "My Workouts", current_user%>
     <% end %> 
+
+    <br><%= image_tag("logo/logo1", width: '250px') %><br>
     
     <%= yield %>
+
   </body>
 </html>
