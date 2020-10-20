@@ -1,3 +1,5 @@
+<% if current_user.id == @user.id %>
+
 <h1>Hello, <%= @user.username %>!</h1>
 
 <h2></p>Your Goal: <%= @user.goal %></p></h2>
@@ -8,4 +10,8 @@
     <li><%= link_to work.name, workout_path(work) %> - <%= work.updated_at.strftime("%B %d, %Y at %H:%M") %></li><br>
     <% end %> 
 </ul>
+<% else %>
+<h2>The page you're trying to access does not belong to you</h2>
+<% end %> 
+
 
