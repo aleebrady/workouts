@@ -4,6 +4,9 @@
 
 <p><%= link_to @workout.trainer.name, trainer_path(@workout.trainer) %> - <%= @workout.trainer.skills %></p>
 
+<% if current_user.id == @workout.user_id %> 
 <%= link_to "Edit Workout", edit_workout_path(@workout) %> <br>
 <br>
 <%= link_to "Delete Workout", workout_path(@workout), method: :delete, data: { confirm: "Are you sure?" } %> 
+<% end %> 
+
